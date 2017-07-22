@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Titanfall2_Memory_editor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="285.849" Width="252.358" ResizeMode="NoResize">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="201*"/>
+            <RowDefinition Height="44*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Load" Content="Load" Margin="10,5,10,7" Click="Load_Click" Grid.Row="1"/>
+        <ScrollViewer Margin="10,0" Height="201" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <StackPanel x:Name="Mods_to_load" Width="216" Height="191"/>
+        </ScrollViewer>
+
     </Grid>
 </Window>

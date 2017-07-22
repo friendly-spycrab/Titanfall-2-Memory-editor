@@ -1,0 +1,26 @@
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\Titanfall2 Memory editor.exe.config
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\Titanfall2 Memory editor.exe
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\Titanfall2 Memory editor.pdb
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\EntityFramework.dll
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\EntityFramework.SqlServer.dll
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\Newtonsoft.Json.dll
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\System.Data.SQLite.dll
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\System.Data.SQLite.EF6.dll
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\System.Data.SQLite.Linq.dll
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\Titanfall2ModdingLibrary.dll
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\Titanfall2ModdingLibrary.pdb
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\EntityFramework.xml
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\EntityFramework.SqlServer.xml
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\Newtonsoft.Json.xml
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\System.Data.SQLite.xml
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\MainWindow.g.cs
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\App.g.cs
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor_MarkupCompile.cache
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor_MarkupCompile.lref
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\MainWindow.baml
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor.g.resources
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2_Memory_editor.Properties.Resources.resources
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor.csproj.GenerateResource.Cache
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor.exe
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor.pdb
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor.csprojResolveAssemblyReference.cache

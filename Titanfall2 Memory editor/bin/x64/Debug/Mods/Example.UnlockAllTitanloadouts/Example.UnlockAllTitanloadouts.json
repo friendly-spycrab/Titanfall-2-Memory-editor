@@ -1,0 +1,29 @@
+{
+   "Files":[
+      {
+         "SQLiteFiles":[
+            "PointerDataBase\\BoomTown.sqlite",
+            "PointerDataBase\\BoomTownEnd.sqlite",
+            "PointerDataBase\\BoomTownStart.sqlite",
+            "PointerDataBase\\BT-7274.sqlite",
+            "PointerDataBase\\Sewers.sqlite",
+            "PointerDataBase\\TheArk.sqlite",
+            "PointerDataBase\\TheBeacon.sqlite",
+            "PointerDataBase\\TheBeaconEnd.sqlite",
+            "PointerDataBase\\TheBeaconStart.sqlite",
+            "PointerDataBase\\TheFoldWeapon.sqlite",
+            "PointerDataBase\\TheGauntlet.sqlite",
+            "PointerDataBase\\TimeShift.sqlite",
+            "PointerDataBase\\TimeshiftEnd.sqlite",
+            "PointerDataBase\\TimeShiftStart.sqlite",
+            "PointerDataBase\\TrialOfFire.sqlite"
+         ],
+         "ComparisonString":"global function GetPilotLoadoutForCurrentMapSP",
+         "ReplacedCodeFile":"_sp_loadouts.nut",
+		 "Directory":"_sp_loadouts"
+      }
+   ],
+   "Description":"This unlocks all titan loadouts",
+   "Name":"Example.UnlockAllTitanloadouts",
+   "Directory":"Example.UnlockAllTitanloadouts"
+}
