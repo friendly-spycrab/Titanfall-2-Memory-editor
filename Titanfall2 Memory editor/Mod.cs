@@ -60,10 +60,5 @@ namespace Titanfall2_Memory_editor
         /// The base directory where the sqlite and replacecode files are
         /// </summary>
         public string Directory;
-
-        /// <summary>
-        /// This is used when the start of the file cannot be found, but other parts can, then we should apply an offset
-        /// </summary>
-        public long AddressOffset;
     }
 }

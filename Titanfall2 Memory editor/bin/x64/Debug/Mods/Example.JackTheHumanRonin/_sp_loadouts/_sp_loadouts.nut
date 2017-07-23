@@ -575,6 +575,7 @@ PilotLoadoutDef function GetPilotLoadoutForCurrentMapSP()
 
 	
 	pilotLoadout.primary 				= "mp_titanweapon_leadwall"
+	pilotLoadout.secondary = "mp_weapon_vinson"
 	pilotLoadout.ordnance 				= "mp_titanweapon_arc_wave"
 	pilotLoadout.special 				= "mp_titanability_phase_dash"
 	pilotLoadout.ordnanceAmmo = -1

@@ -21,26 +21,7 @@
          "ComparisonString":"global function GetPilotLoadoutForCurrentMapSP",
          "ReplacedCodeFile":"_sp_loadouts.nut",
 		 "Directory":"_sp_loadouts"
-      },
-	  {
-         "SQLiteFiles":[],
-         "ComparisonString":"#base \"pilot_base.set\"\r\n\"pilot_solo\"\r\n{",
-         "ReplacedCodeFile":"pilot_solo.set",
-		 "Directory":"pilot_solo"
-      },
-	  {
-         "SQLiteFiles":[],
-         "ComparisonString":"untyped\r\n\r\nglobal function ClTitanCockpit_Init",
-         "ReplacedCodeFile":"cl_titan_cockpit.nut",
-		 "Directory":"cl_titan_cockpit"
-      },
-	  {
-         "SQLiteFiles":[],
-         "ComparisonString":"untyped\r\n\r\nglobal function TitanEmbark_Init",
-         "ReplacedCodeFile":"sh_titan_embark.gnut",
-		 "Directory":"sh_titan_embark"
       }
-	  
    ],
    "Description":"This turns jack into a human ronin",
    "Name":"Example.JackTheHumanRonin",
