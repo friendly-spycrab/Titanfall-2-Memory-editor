@@ -32,6 +32,7 @@ namespace Titanfall2_Memory_editor
 
             foreach (var item in Directory.GetDirectories("Mods"))
             {
+                //Gets the name of the end folder
                 string OnlyName = System.IO.Path.GetFileName(item);
                 if (File.Exists(item + @"\" + OnlyName + ".json"))
                 {
