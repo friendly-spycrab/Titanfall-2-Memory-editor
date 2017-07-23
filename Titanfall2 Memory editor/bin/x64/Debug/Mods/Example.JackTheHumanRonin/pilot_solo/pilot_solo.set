@@ -9,20 +9,18 @@
 		class						"pilot"
 		subclass					"wallrun"
 
-		health						5000
-
-		//Light gravity
-
-		jumpheight					60
+		health						10000
+		
+		jumpheight					120
 		gravityscale				0.75
 		stepheight					18
-		ziplineSpeed				600
+		ziplineSpeed				1800
 		wallrun                     1
 		doubleJump                  1
 
-		superjumpMinHeight			60
-		superjumpMaxHeight			60
-		superjumpHorzSpeed			180
+		superjumpMinHeight			120
+		superjumpMaxHeight			120
+		superjumpHorzSpeed			360
 
         wallrun_timeLimit           1.75
 
