@@ -101,6 +101,12 @@ namespace Titanfall2ModdingLibrary
             return Pointer(Lev.BaseAddress,Lev.offsets,Lev.ModuleName);
         }
 
+        public long findAddress(byte[] DataToFind)
+        {
+            return MemoryScan.findaddress(processHandle,DataToFind);
+
+        }
+
         /// <summary>
         /// Returns the address of a pointer
         /// </summary>

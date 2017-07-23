@@ -44,15 +44,17 @@ namespace Titanfall2_Memory_editor
         }
 
 
-        private void Load_Click(object sender, RoutedEventArgs e)
+        private async void Load_Click(object sender, RoutedEventArgs e)
         {
             ModLoader = new Modder();
-
+            Load.IsEnabled = false;
             foreach (var item in CheckBoxes)
             {
                 if(item.IsChecked.Value)
-                    WriteMod(Mods[item]);
+                    await Task.Factory.StartNew(() => WriteMod(Mods[item]));
             }
+            System.Windows.Forms.MessageBox.Show("Finished loading");
+            Load.IsEnabled = true;
         }
 
         private void AddCheckbox(Mod M)
@@ -72,7 +74,7 @@ namespace Titanfall2_Memory_editor
         /// </summary>
         /// <param name="M"></param>
         /// <returns>The list of files that couldnt be written into memory</returns>
-        private List<SingleFile> WriteMod(Mod M)
+        private async Task<List<SingleFile>> WriteMod(Mod M)
         {
             List<SingleFile> Fail = new List<SingleFile>();
             foreach (var item in M.Files)
@@ -89,18 +91,30 @@ namespace Titanfall2_Memory_editor
         /// </summary>
         /// <param name="SingleMod">A single mod file</param>
         /// <returns>returns true if successful</returns>
-        private bool WriteModFileIntoMemory(SingleFile SingleModFile,string Path)
+        private bool WriteModFileIntoMemory(SingleFile SingleModFile, string Path)
         {
             try
             {
                 long Address = -1;
-                foreach (var FileName in SingleModFile.SQLiteFiles)
+                if (SingleModFile.SQLiteFiles != null && SingleModFile.SQLiteFiles.Length > 0)
                 {
-                    List<Pointer> Pointers = SQLiteLoader.GetPointerListFromSQLiteFile(Path + SingleModFile.Directory + @"\" + FileName);
-                    Address = ModLoader.TestPointers(Pointers.ToArray(), SingleModFile.ComparisonString);
-                    if (Address != -1)
-                        break;
+                    foreach (var FileName in SingleModFile.SQLiteFiles)
+                    {
+                        List<Pointer> Pointers = SQLiteLoader.GetPointerListFromSQLiteFile(Path + SingleModFile.Directory + @"\" + FileName);
+                        Address = ModLoader.TestPointers(Pointers.ToArray(), SingleModFile.ComparisonString);
+                        if (Address != -1)
+                            break;
+                    }
                 }
+
+                if(Address == -1)
+                {
+                    Address = ModLoader.findAddress(Encoding.ASCII.GetBytes(SingleModFile.ComparisonString));
+                }
+
+                //Add the offset
+                if (SingleModFile.AddressOffset != 0)
+                    Address += SingleModFile.AddressOffset;
 
                 if (Address != -1)
                 {
