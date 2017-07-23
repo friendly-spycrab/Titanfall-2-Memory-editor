@@ -81,7 +81,7 @@ namespace Titanfall2ModdingLibrary
             {
                 // 28 = sizeof(MEMORY_BASIC_INFORMATION)
                 VirtualQueryEx(Handle, (IntPtr)proc_min_address, out mem_basic_info, (uint)Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION)));
-
+                
                 // if this memory chunk is accessible
                 if (mem_basic_info.Protect == PAGE_READWRITE && mem_basic_info.State == MEM_COMMIT)
                 {

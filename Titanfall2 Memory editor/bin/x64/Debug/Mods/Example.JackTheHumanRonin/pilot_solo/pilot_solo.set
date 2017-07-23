@@ -8,6 +8,7 @@
 
 		class						"pilot"
 		subclass					"wallrun"
+		weaponClass			"titan"
 
 		health						10000
 		
@@ -25,7 +26,7 @@
         wallrun_timeLimit           1.75
 
 
-		wallrunJumpOutwardSpeed		205//170
+		wallrunJumpOutwardSpeed		205
 		wallrunJumpUpSpeed			230
 		wallrunJumpInputDirSpeed	75
 
@@ -57,21 +58,6 @@
 
 		ClassMods
 		{
-			disable_doublejump
-			{
-				doublejump		"0"
-			}
-
-			disable_wallrun
-			{
-				wallrun			"0"
-			}
-
-			disable_sprint
-			{
-				sprint			"0"
-			}
-
 			boomtown_climb
 			{
 				pitchMaxUp		75

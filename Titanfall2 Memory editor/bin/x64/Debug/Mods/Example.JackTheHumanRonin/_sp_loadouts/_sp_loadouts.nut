@@ -573,8 +573,11 @@ PilotLoadoutDef function GetPilotLoadoutForCurrentMapSP()
 	pilotLoadout.setFile = DEFAULT_PILOT_SETTINGS
 	pilotLoadout.melee   = "melee_titan_sword"
 
-	
 	pilotLoadout.primary 				= "mp_titanweapon_leadwall"
+	pilotLoadout.primaryMods = ["instaload"]
+	pilotLoadout.passive1 = "pas_ads_hover"
+	pilotLoadout.passive2 = "pas_fast_reload"
+	pilotLoadout.secondary = "mp_titanweapon_flightcore_rockets"
 	pilotLoadout.ordnance 				= "mp_titanweapon_arc_wave"
 	pilotLoadout.special 				= "mp_titanability_phase_dash"
 	pilotLoadout.ordnanceAmmo = -1
