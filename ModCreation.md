@@ -40,7 +40,7 @@ The name of the directory.the folder in the mods folder should have the same nam
 ### The files array type
 
 ##### SQLiteFiles
-These are pointer found in cheat engine using pointerscans ability to export to sqlite. these are much faster than searching through memory. [Tutorial to pointerscanning](https://www.youtube.com/watch?v=MiCoP2MrDOU)
+These are pointer found in cheat engine using pointerscans ability to export to sqlite. these are much faster than searching through memory. [Tutorial to pointerscanning](https://www.youtube.com/watch?v=MiCoP2MrDOU).
 
 ##### ComparisonString
 This is the string we compare so we are sure that we have found the right address. This can be the start of a file but doesnt have to. Use the addressoffset if you cannot use the start of the file
@@ -51,7 +51,9 @@ This is an optional parameter. This applies an offset of characters to the addre
 This is so that if you cannot find the start of the file reliably, you can use this to go back to the start of the file.
 
 ##### ReplacedCodeFile
-This is the file that will overwrite the old one. MUST NOT BE LONGER THAN THE ORIGINAL VERSION OR WE RISK REPlACING NECCESARY MEMORY
+This is the file that will overwrite the old one. MUST NOT BE LONGER THAN THE ORIGINAL VERSION OR WE RISK REPlACING NECCESARY MEMORY.
+
+Current file types that can be replaced is .set *.gnut *.nut files
 
 ##### Directory
-The directory the file is located in. Is relative to the main mod directory
+The directory the file is located in. this is relative to the main mod directory
