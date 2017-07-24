@@ -22,7 +22,7 @@ var function OnWeaponPrimaryAttack_titanability_phase_dash( entity weapon, Weapo
 		}
 		else
 		{
-			EndlessStimBegin(player,0.4)
+			EndlessStimBegin(player,0.8)
 			IsStim = true
 		}
 	}

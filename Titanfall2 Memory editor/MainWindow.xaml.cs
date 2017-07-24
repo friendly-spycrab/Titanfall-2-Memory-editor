@@ -29,7 +29,7 @@ namespace Titanfall2_Memory_editor
         public MainWindow()
         {
             InitializeComponent();
-
+            
             foreach (var item in Directory.GetDirectories("Mods"))
             {
                 //Gets the name of the end folder
