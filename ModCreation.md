@@ -53,7 +53,7 @@ This is so that if you cannot find the start of the file reliably, you can use t
 ##### ReplacedCodeFile
 This is the file that will overwrite the old one. MUST NOT BE LONGER THAN THE ORIGINAL VERSION OR WE RISK REPlACING NECCESARY MEMORY.
 
-Current file types that can be replaced are .set *.gnut *.nut files
+Current file types that can be replaced are set,gnut and nut files
 
 ##### Directory
 The directory the file is located in. this is relative to the main mod directory
