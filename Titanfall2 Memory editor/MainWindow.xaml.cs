@@ -50,11 +50,11 @@ namespace Titanfall2_Memory_editor
             Load.IsEnabled = false;
             foreach (var item in CheckBoxes)
             {
-                if(item.IsChecked.Value)
+                if (item.IsChecked.Value)
                     await Task.Factory.StartNew(() => WriteMod(Mods[item]));
             }
-            System.Windows.Forms.MessageBox.Show("Finished loading");
             Load.IsEnabled = true;
+            System.Windows.Forms.MessageBox.Show("Finished loading");
         }
 
         private void AddCheckbox(Mod M)
@@ -77,12 +77,20 @@ namespace Titanfall2_Memory_editor
         private async Task<List<SingleFile>> WriteMod(Mod M)
         {
             List<SingleFile> Fail = new List<SingleFile>();
-            foreach (var item in M.Files)
-            {
-                if (!WriteModFileIntoMemory(item,@"Mods\" + M.Directory + @"\"))
-                    Fail.Add(item);
-            }
 
+            //Faster
+            Parallel.ForEach(M.Files, (item) =>
+            {
+                if (!WriteModFileIntoMemory(item, @"Mods\" + M.Directory + @"\"))
+                    Fail.Add(item);
+            });
+
+            ////For debugging
+            //foreach (var item in M.Files)
+            //{
+            //    if (!WriteModFileIntoMemory(item,@"Mods\" + M.Directory + @"\"))
+            //        Fail.Add(item);
+            //}
             return Fail;
         }
 

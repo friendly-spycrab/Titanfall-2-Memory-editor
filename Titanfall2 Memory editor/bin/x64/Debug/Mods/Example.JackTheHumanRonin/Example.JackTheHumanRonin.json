@@ -39,12 +39,6 @@
          "ComparisonString":"untyped\r\n\r\nglobal function TitanEmbark_Init",
          "ReplacedCodeFile":"sh_titan_embark.gnut",
 		 "Directory":"sh_titan_embark"
-      },
-      {
-         "SQLiteFiles":[],
-         "ComparisonString":"WeaponData\r\n{\r\n	// General\r\n	\"printname\"   									\"#WPN_TITAN_LEADWALL\"\r\n	\"shortprintname\"								\"#WPN_TITAN_LEADWALL_SHORT\"\r\n	\"description\" 									\"#WPN_TITAN_LEADWALL_DESC\"\r\n	\"longdesc\"										\"#WPN_TITAN_LEADWALL_LONGDESC\"",
-         "ReplacedCodeFile":"mp_titanweapon_leadwall.txt",
-		 "Directory":"mp_titanweapon_leadwall"
       }
    ],
    "Description":"This turns jack into a human ronin",

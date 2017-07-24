@@ -1,0 +1,13 @@
+{
+   "Files":[
+	  {
+         "SQLiteFiles":[],
+         "ComparisonString":"global function OnWeaponPrimaryAttack_titanability_phase_dash",
+         "ReplacedCodeFile":"mp_titanability_phase_dash.nut",
+		 "Directory":"mp_titanability_phase_dash"
+      }
+   ],
+   "Description":"This removes phase shift from phase dash. but gives unlimited dashes",
+   "Name":"Example.NoPhaseOnlyDash",
+   "Directory":"Example.NoPhaseOnlyDash"
+}
