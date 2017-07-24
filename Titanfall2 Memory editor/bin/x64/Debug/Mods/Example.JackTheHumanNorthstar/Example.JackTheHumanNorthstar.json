@@ -48,7 +48,7 @@
 		 "AddressOffset":-81
       }
    ],
-   "Description":"This turns jack into a human ronin. also unlocks all titans",
-   "Name":"Example.JackTheHumanRonin",
-   "Directory":"Example.JackTheHumanRonin"
+   "Description":"This turns jack into a human northstart. also unlocks all titans",
+   "Name":"Example.JackTheHumanNorthstar",
+   "Directory":"Example.JackTheHumanNorthstar"
 }

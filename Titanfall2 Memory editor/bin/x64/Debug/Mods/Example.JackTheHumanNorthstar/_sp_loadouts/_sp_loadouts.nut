@@ -574,10 +574,11 @@ PilotLoadoutDef function GetPilotLoadoutForCurrentMapSP()
 	pilotLoadout.melee   = "melee_titan_sword"
 	ReloadScripts()
 
-	pilotLoadout.primary 				= "mp_titanweapon_leadwall"
-	pilotLoadout.ordnance 				= "mp_titanweapon_arc_wave"
+	pilotLoadout.primary 				= "mp_titanweapon_sniper"
+	pilotLoadout.secondary = "mp_titanweapon_flightcore_rockets"
+	pilotLoadout.ordnance 				= "mp_titanability_hover"
 	pilotLoadout.ordnanceMods = ["dev_mod_low_recharge"]
-	pilotLoadout.special 				= "mp_titanability_phase_dash"
+	pilotLoadout.special 				= "mp_titanweapon_dumbfire_rockets"
 	pilotLoadout.specialMods = ["dev_mod_low_recharge"]
 	pilotLoadout.ordnanceAmmo = -1
 	

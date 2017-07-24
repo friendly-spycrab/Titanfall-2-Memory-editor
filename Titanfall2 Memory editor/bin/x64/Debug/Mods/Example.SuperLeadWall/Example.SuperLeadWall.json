@@ -1,0 +1,14 @@
+{
+   "Files":[
+	  {
+         "SQLiteFiles":[],
+         "ComparisonString":"global function OnWeaponPrimaryAttack_titanweapon_leadwall",
+         "ReplacedCodeFile":"mp_titanweapon_leadwall.nut",
+		 "Directory":"mp_titanweapon_leadwall",
+		 "AddressOffset":-11
+      }
+   ],
+   "Description":"This makes the leadwall have unlimited ammo",
+   "Name":"Example.SuperLeadWall",
+   "Directory":"Example.SuperLeadWall"
+}
