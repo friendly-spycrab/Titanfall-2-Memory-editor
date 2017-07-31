@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Titanfall2ModdingLibrary;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Titanfall2_Memory_editor
 {
@@ -77,14 +78,12 @@ namespace Titanfall2_Memory_editor
         private async Task<List<SingleFile>> WriteMod(Mod M)
         {
             List<SingleFile> Fail = new List<SingleFile>();
-
             //Faster
             Parallel.ForEach(M.Files, (item) =>
             {
                 if (!WriteModFileIntoMemory(item, @"Mods\" + M.Directory + @"\"))
                     Fail.Add(item);
             });
-
             ////For debugging
             //foreach (var item in M.Files)
             //{

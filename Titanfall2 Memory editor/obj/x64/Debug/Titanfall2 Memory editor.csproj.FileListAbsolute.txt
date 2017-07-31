@@ -24,3 +24,5 @@ G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Me
 G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor.exe
 G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor.pdb
 G:\Titanfall2 Memory editor\Titanfall2 Memory editor\obj\x64\Debug\Titanfall2 Memory editor.csprojResolveAssemblyReference.cache
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\Titanfall2ModdingLibrary.dll.config
+G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\System.Data.SQLite.dll.config

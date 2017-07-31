@@ -12,12 +12,10 @@ namespace Titanfall2ModdingLibrary
     {
 
         // REQUIRED CONSTS
-
         const int PROCESS_QUERY_INFORMATION = 0x0400;
         const int MEM_COMMIT = 0x00001000;
         const int PAGE_READWRITE = 0x04;
         const int PROCESS_WM_READ = 0x0010;
-
         // REQUIRED METHODS
         [DllImport("kernel32.dll")]
         public static extern bool ReadProcessMemory(int hProcess, long lpBaseAddress, byte[] lpBuffer, long dwSize, ref int lpNumberOfBytesRead);
@@ -104,39 +102,44 @@ namespace Titanfall2ModdingLibrary
 
         private static long SimpleBoyerMooreSearch(byte[] haystack, byte[] needle)
         {
-            int[] lookup = new int[256];
-            for (int i = 0; i < lookup.Length; i++) { lookup[i] = needle.Length; }
-
-            for (int i = 0; i < needle.Length; i++)
+            unchecked
             {
-                lookup[needle[i]] = needle.Length - i - 1;
-            }
 
-            long index = needle.Length - 1;
-            var lastByte = needle.Last();
-            while (index < haystack.Length)
-            {
-                var checkByte = haystack[index];
-                if (haystack[index] == lastByte)
+
+                int[] lookup = new int[256];
+                for (int i = 0; i < lookup.Length; i++) { lookup[i] = needle.Length; }
+
+                for (int i = 0; i < needle.Length; i++)
                 {
-                    bool found = true;
-                    for (int j = needle.Length - 2; j >= 0; j--)
-                    {
-                        if (haystack[index - needle.Length + j + 1] != needle[j])
-                        {
-                            found = false;
-                            break;
-                        }
-                    }
-
-                    if (found)
-                        return index - needle.Length + 1;
-                    else
-                        index++;
+                    lookup[needle[i]] = needle.Length - i - 1;
                 }
-                else
+
+                long index = needle.Length - 1;
+                var lastByte = needle.Last();
+                while (index < haystack.Length)
                 {
-                    index += lookup[checkByte];
+                    var checkByte = haystack[index];
+                    if (haystack[index] == lastByte)
+                    {
+                        bool found = true;
+                        for (int j = needle.Length - 2; j >= 0; j--)
+                        {
+                            if (haystack[index - needle.Length + j + 1] != needle[j])
+                            {
+                                found = false;
+                                break;
+                            }
+                        }
+
+                        if (found)
+                            return index - needle.Length + 1;
+                        else
+                            index++;
+                    }
+                    else
+                    {
+                        index += lookup[checkByte];
+                    }
                 }
             }
             return -1;

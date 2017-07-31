@@ -18,6 +18,7 @@ namespace Titanfall2ModdingLibrary
         const int PROCESS_QUERY_INFORMATION = 0x0400;
         const int MEM_COMMIT = 0x00001000;
         const int PAGE_READWRITE = 0x04;
+        const long PROCESS_ALL_ACCESS = (0x000F0000L | 0x00100000L | 0xFFF);
 
         public readonly Pointer LatestLoadedVPKFiles = new Pointer() { offsets = new long[] { 0x98, 0x70, 0xf8, 0x588, 0x128 }, BaseAddress = 0x14057B30, ModuleName = "engine.dll" };
 
@@ -48,7 +49,7 @@ namespace Titanfall2ModdingLibrary
         Process process;
 
         [DllImport("kernel32.dll")]
-        public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
+        public static extern IntPtr OpenProcess(long dwDesiredAccess, bool bInheritHandle, int dwProcessId);
 
         [DllImport("kernel32.dll")]
         public static extern bool ReadProcessMemory(int hProcess, long lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesRead);
@@ -60,7 +61,7 @@ namespace Titanfall2ModdingLibrary
         public Modder(string ProccessName = "Titanfall2")
         {
             process = Process.GetProcessesByName(ProccessName)[0];
-            processHandle = OpenProcess(PROCESS_WM_READ | PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_QUERY_INFORMATION | MEM_COMMIT | PAGE_READWRITE, false, process.Id);
+            processHandle = OpenProcess(PROCESS_ALL_ACCESS/*PROCESS_WM_READ | PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_QUERY_INFORMATION | MEM_COMMIT | PAGE_READWRITE*/, false, process.Id);
 
         }
 
@@ -166,6 +167,12 @@ namespace Titanfall2ModdingLibrary
                 return Address;
 
             return -1;
+
+        }
+
+        public void InjectDll()
+        {
+            Inject.InjectDll(new InjectData() { Handle = processHandle, P = process });
 
         }
 
