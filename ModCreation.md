@@ -1,6 +1,6 @@
-#So you want to create a mod
+# So you want to create a mod
 
-###Lets take PhaseToEndlessStim as an example
+### Lets take PhaseToEndlessStim as an example
 
 The basic json looks like this
 
