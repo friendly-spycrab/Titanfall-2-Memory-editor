@@ -28,7 +28,7 @@ G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\System.Data.S
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\EntityFramework.xml
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\EntityFramework.SqlServer.xml
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\System.Data.SQLite.xml
-G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\obj\x64\Debug\Titanfall2ModdingLibrary.csprojResolveAssemblyReference.cache
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\obj\x64\Debug\Titanfall2ModdingLibrary.dll
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\obj\x64\Debug\Titanfall2ModdingLibrary.pdb
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\System.Data.SQLite.dll.config
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\obj\x64\Debug\Titanfall2ModdingLibrary.csprojResolveAssemblyReference.cache

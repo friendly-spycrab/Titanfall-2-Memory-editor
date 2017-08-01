@@ -1,0 +1,14 @@
+{
+   "Files":[
+	  {
+         "SQLiteFiles":[],
+         "ComparisonString":"global function OnWeaponPrimaryAttack_titanability_phase_dash",
+         "ReplacedCodeFile":"mp_titanability_phase_dash.nut",
+		 "Directory":"mp_titanability_phase_dash",
+		 "AddressOffset":0
+      }
+   ],
+   "Description":"This turns phase dash into unlimited super stim that can be toggled",
+   "Name":"Example.PhaseShiftToEndlessStim",
+   "Directory":"Example.PhaseShiftToEndlessStim"
+}

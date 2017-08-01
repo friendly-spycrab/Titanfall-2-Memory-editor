@@ -48,6 +48,7 @@ namespace Titanfall2_Memory_editor
         private async void Load_Click(object sender, RoutedEventArgs e)
         {
             ModLoader = new Modder();
+            //ModLoader.InjectDll();
             Load.IsEnabled = false;
             foreach (var item in CheckBoxes)
             {
