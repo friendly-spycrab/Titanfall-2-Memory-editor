@@ -9,3 +9,5 @@ Simply add any mod folders into the Mods folders. Then start Titanfall 2 and the
 [Creating a mod](../master/ModCreation.md)
 
 [Library of mods](https://github.com/friendly-spycrab/Titanfall-2-mod-library)
+
+[Trello](https://trello.com/b/yQh8Tqo0/titanfall-2-memory-editor)
