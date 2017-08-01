@@ -9,6 +9,6 @@
       }
    ],
    "Description":"This turns phase dash into unlimited super stim that can be toggled",
-   "Name":"Example.PhaseShiftToEndlessStim",
+   "Name":"Example.PhaseDashToEndlessStim",
    "Directory":"Example.PhaseShiftToEndlessStim"
 }
