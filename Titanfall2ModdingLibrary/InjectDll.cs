@@ -10,7 +10,7 @@ using System.Diagnostics;
 namespace Titanfall2ModdingLibrary
 {
 
-    public static class Inject
+    public class Inject
     {
         #region DllImports
         [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
@@ -19,7 +19,6 @@ namespace Titanfall2ModdingLibrary
         [DllImport("kernel32", CharSet = CharSet.Ansi, ExactSpelling = true, SetLastError = true)]
         static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
 
-        
         [DllImport("kernel32.dll", SetLastError = true, ExactSpelling = true)]
         static extern IntPtr VirtualAllocEx(IntPtr hProcess, IntPtr lpAddress,uint dwSize, uint flAllocationType, uint flProtect);
 
@@ -39,6 +38,8 @@ namespace Titanfall2ModdingLibrary
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern bool GetExitCodeThread(IntPtr Handle, out IntPtr lpExitCode);
 
+        [DllImport("kernel32.dll", SetLastError = true)]
+        static extern IntPtr LoadLibrary(string Filename);
 
         [DllImport("kernel32.dll")]
         static extern IntPtr CreateRemoteThread(
@@ -58,51 +59,73 @@ namespace Titanfall2ModdingLibrary
         const uint MEM_RELEASE = 0x8000;
         const uint INFINITE = 0xFFFFFFFF;
 
+        InjectData InjectedData;
+        bool IsDllInjected = false;
+        IntPtr InjectedDllAddress;
 
-        public static void InjectDll(InjectData I)
+
+        public Inject(InjectData Data)
         {
+            //Set inject data
+            InjectedData = Data;
 
+            //Load library so we can get the offset
+            InjectedDllAddress = LoadLibrary(Data.DllPath);
+            IntPtr A = GetProcAddress(InjectedDllAddress, "TestFunctionCall");
+        }
+
+        public IntPtr InjectDll()
+        {
+            return InjectDll(InjectedData);
+        }
+
+        public IntPtr InjectDll(InjectData I)
+        {
             // searching for the address of LoadLibraryA and storing it in a pointer
             IntPtr loadLibraryAddr = GetProcAddress(GetModuleHandle("kernel32.dll"), "LoadLibraryA");
 
-            // name of the dll we want to inject. currently static
-            /* Todo:
-                Make the address dynamic.
-                Cannot be a relative address must be an absoloute address
-             */
-            string dllName = @"G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\InjectorDll.dll";
+            //Load
+            IntPtr ThreadHandle = CallFunction(loadLibraryAddr, Encoding.Default.GetBytes(I.DllPath));
 
-            //Allocate some memory for the path to the dll
-            IntPtr allocMemAddress = VirtualAllocEx(I.Handle, IntPtr.Zero, (uint)((dllName.Length + 1) * Marshal.SizeOf(typeof(char))), MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
-
-            // writing the name of the dll there
-            UIntPtr bytesWritten;
-            WriteProcessMemory(I.Handle, allocMemAddress, Encoding.Default.GetBytes(dllName), (uint)((dllName.Length + 1) * Marshal.SizeOf(typeof(char))), out bytesWritten);
-
-            // creating a thread that will call LoadLibraryA with allocMemAddress as argument
-            IntPtr ThreadHandle =  CreateRemoteThread(I.Handle, IntPtr.Zero, 0, loadLibraryAddr, allocMemAddress, 0, IntPtr.Zero);
-            
-
-            //Wait until the dll has been injected
             WaitForSingleObject(ThreadHandle, INFINITE);
-
-
-            //Get Handle of the loaded module
-            IntPtr ModuleHandle;
-            GetExitCodeThread(ThreadHandle,out ModuleHandle);
-
-
             CloseHandle(ThreadHandle);
-            VirtualFreeEx(I.Handle, allocMemAddress, (uint)((dllName.Length + 1) * Marshal.SizeOf(typeof(char))), MEM_RELEASE);
-            
-            //The dll has now been injected
+            if (ThreadHandle != (IntPtr)0)
+            {
+                IsDllInjected = true;
+                return ThreadHandle;
+            }
+            else
+                return IntPtr.Zero;
+
         }
+
+        public IntPtr CallFunction(IntPtr FunctionAddress,byte[] Parameter)
+        {
+            //Allocate memory for the parameter
+            IntPtr ParameterAddress = VirtualAllocEx(InjectedData.Handle,IntPtr.Zero,(uint)Parameter.Length + 1, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+
+            //Write the parameter into the address
+            UIntPtr bytesWritten;
+            WriteProcessMemory(InjectedData.Handle,ParameterAddress,Parameter, (uint)Parameter.Length + 1,out bytesWritten);
+
+
+            return CreateRemoteThread(InjectedData.Handle,IntPtr.Zero,0,FunctionAddress,ParameterAddress,0,IntPtr.Zero);
+        }
+
+        public IntPtr GetFunctionAddress(string FunctionName)
+        {
+            return GetProcAddress(InjectedDllAddress,FunctionName);
+        }
+
+        
+
+    
     }
 
     public struct InjectData
     {
         public IntPtr Handle;
         public Process P;
-        
+        public string DllPath;
     }
 }

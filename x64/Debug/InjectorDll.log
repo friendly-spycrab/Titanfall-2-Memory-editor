@@ -1,6 +1,0 @@
-﻿  dllmain.cpp
-g:\titanfall2 memory editor\injectordll\dllmain.cpp(43): warning C4312: 'reinterpret_cast': conversion from 'DWORD' to 'byte *' of greater size
-g:\titanfall2 memory editor\injectordll\dllmain.cpp(72): warning C4200: nonstandard extension used: zero-sized array in struct/union
-  g:\titanfall2 memory editor\injectordll\dllmain.cpp(72): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
-  InjectorDll.vcxproj -> G:\Titanfall2 Memory editor\x64\Debug\InjectorDll.dll
-  InjectorDll.vcxproj -> G:\Titanfall2 Memory editor\x64\Debug\InjectorDll.pdb (Partial PDB)

@@ -23,10 +23,11 @@ struct
 	int maxAmmo
 	float ammoRegenTime
 } file
-
-var function OnWeaponPrimaryAttack_titanweapon_leadwall( entity weapon, WeaponPrimaryAttackParams attackParams )
+bool s = true
+var function OnWeaponPrimaryAttack_titanweapon_leadwall( entity w, WeaponPrimaryAttackParams attackParams )
 {
-	return FireWeaponPlayerAndNPC( attackParams, true, weapon )
+	return FireWeaponPlayerAndNPC( attackParams, true, w )
+	
 }
 
 #if SERVER
@@ -75,17 +76,14 @@ function FireWeaponPlayerAndNPC( WeaponPrimaryAttackParams attackParams, bool pl
 					projectileSpeed = 3800
 				}
 
-			entity bolt = weapon.FireWeaponBolt( attackParams.pos, attackDir, projectileSpeed, damageTypes.largeCaliber | DF_SHOTGUN, damageTypes.largeCaliber | DF_SHOTGUN, playerFired, index )
-			if ( bolt )
+			entity b = weapon.FireWeaponBolt( attackParams.pos, attackDir, projectileSpeed, damageTypes.largeCaliber | DF_SHOTGUN, damageTypes.largeCaliber | DF_SHOTGUN, playerFired, index )
+			if ( b )
 			{
-				bolt.kv.gravity = 0.4 // 0.09
+				b.kv.gravity = 0.4
+				
+				b.SetProjectileLifetime( RandomFloatRange( 0.30, 0.35 ) )
 
-				if ( weapon.GetWeaponClassName() == "mp_weapon_shotgun_doublebarrel" )
-					bolt.SetProjectileLifetime( RandomFloatRange( 1.0, 1.3 ) )
-				else
-				bolt.SetProjectileLifetime( RandomFloatRange( 0.30, 0.35 ) )
-
-				EmitSoundOnEntity( bolt, "wpn_leadwall_projectile_crackle" )
+				EmitSoundOnEntity( b, "wpn_leadwall_projectile_crackle" )
 			}
 		}
 	}

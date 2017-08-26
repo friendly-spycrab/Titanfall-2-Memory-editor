@@ -172,8 +172,9 @@ namespace Titanfall2ModdingLibrary
 
         public void InjectDll()
         {
-            Inject.InjectDll(new InjectData() { Handle = processHandle, P = process });
-
+            Inject DllInjector = new Inject(new InjectData() { Handle = processHandle, P = process, DllPath = @"G:\Titanfall2 Memory editor\Titanfall2 Memory editor\bin\x64\Debug\Resources\InjectorDll.dll" });
+            DllInjector.InjectDll();
+            DllInjector.CallFunction(DllInjector.GetFunctionAddress("TestFunctionCall"),new byte[] { 0 });
         }
 
     }

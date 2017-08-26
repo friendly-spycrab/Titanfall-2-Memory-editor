@@ -17,6 +17,13 @@ C:\Users\fido1\OneDrive\Titanfall 2 modder\Titanfall2ModdingLibrary\bin\x64\Debu
 C:\Users\fido1\OneDrive\Titanfall 2 modder\Titanfall2ModdingLibrary\bin\x64\Debug\System.Data.SQLite.Linq.dll
 C:\Users\fido1\OneDrive\Titanfall 2 modder\Titanfall2ModdingLibrary\bin\x64\Debug\EntityFramework.xml
 C:\Users\fido1\OneDrive\Titanfall 2 modder\Titanfall2ModdingLibrary\bin\x64\Debug\EntityFramework.SqlServer.xml
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Resources\InjectorDll.exp
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Resources\InjectorDll.ilk
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Resources\InjectorDll.lib
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Resources\InjectorDll.dll
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Resources\InjectorDll.pdb
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Resources\MinHook.x64.dll
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Resources\MinHook.x86.dll
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Titanfall2ModdingLibrary.dll.config
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Titanfall2ModdingLibrary.dll
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\Titanfall2ModdingLibrary.pdb
@@ -28,7 +35,8 @@ G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\System.Data.S
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\EntityFramework.xml
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\EntityFramework.SqlServer.xml
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\System.Data.SQLite.xml
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\System.Data.SQLite.dll.config
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\obj\x64\Debug\Titanfall2ModdingLibrary.Properties.Resources.resources
+G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\obj\x64\Debug\Titanfall2ModdingLibrary.csproj.GenerateResource.Cache
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\obj\x64\Debug\Titanfall2ModdingLibrary.dll
 G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\obj\x64\Debug\Titanfall2ModdingLibrary.pdb
-G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\bin\x64\Debug\System.Data.SQLite.dll.config
-G:\Titanfall2 Memory editor\Titanfall2ModdingLibrary\obj\x64\Debug\Titanfall2ModdingLibrary.csprojResolveAssemblyReference.cache

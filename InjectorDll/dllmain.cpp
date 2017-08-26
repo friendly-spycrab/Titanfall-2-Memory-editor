@@ -1,5 +1,12 @@
 #include<Windows.h>
 #include <vector>
+#include "MinHook.h"
+
+#if defined _M_X64
+#pragma comment(lib, "MinHook.x64.lib")
+#elif defined _M_IX86
+#pragma comment(lib, "MinHook.x86.lib")
+#endif
 
 using namespace std;
 extern "C" DWORD GetAddress();//Get the address from asm
@@ -13,8 +20,6 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 	{
 		case DLL_PROCESS_ATTACH:
 		{
-
-			MessageBox(NULL, L"Load complete", L"Dll says:", MB_OK);
 			break;
 		}
 
@@ -62,6 +67,30 @@ bool CheckIsSameValue(byte *Location, byte BArray[])
 
 	return IsSame;
 }
+
+void Hook()
+{
+	//MH_Initialize();
+
+
+}
+
+extern "C" __declspec(dllexport) int Initialize(int *Address)
+{
+	return 0;
+}
+
+extern "C" __declspec(dllexport) void TestFunctionCall(byte Param)
+{
+	MessageBox(NULL, L"Function called and changed", L"Dll says:", MB_OK);
+}
+
+//extern "C" __declspec(dllexport) void AddCompare(byte *data)
+//{
+//
+//
+//}
+
 
 /*
 	Contains the pointer to the new data. a comparison string.

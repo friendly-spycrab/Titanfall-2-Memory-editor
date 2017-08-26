@@ -48,6 +48,7 @@ namespace Titanfall2_Memory_editor
         private async void Load_Click(object sender, RoutedEventArgs e)
         {
             ModLoader = new Modder();
+            //Dll injection test. crude i know
             //ModLoader.InjectDll();
             Load.IsEnabled = false;
             foreach (var item in CheckBoxes)
@@ -85,6 +86,8 @@ namespace Titanfall2_Memory_editor
                 if (!WriteModFileIntoMemory(item, @"Mods\" + M.Directory + @"\"))
                     Fail.Add(item);
             });
+
+
             ////For debugging
             //foreach (var item in M.Files)
             //{
